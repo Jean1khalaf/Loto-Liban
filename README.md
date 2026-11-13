@@ -56,3 +56,11 @@ Alternative : installez l’intégration Neon depuis Vercel Marketplace. Elle pe
 ## Mettre à jour les tirages
 
 Remplacez `data.csv` en conservant le séparateur `;` et les colonnes `date;day;number_1;...;number_6;bonus;jackpot`, puis poussez le changement sur GitHub. Vercel redéploiera automatiquement.
+
+## Stratégie Affinités historiques
+
+Cette option compte les paires apparues ensemble dans les tirages, combine 60 % d’affinité, 20 % de fréquence individuelle et 20 % d’équilibre structurel, puis affiche les trois paires les plus observées. Elle analyse le passé sans prédire le prochain tirage.
+
+### Mise à niveau d'une base Neon existante
+
+Si vous aviez déjà déployé la première version, exécutez `sql/migration-add-affinites.sql` dans le SQL Editor Neon. Cela autorise la valeur `affinites` dans la contrainte de la colonne `strategy`. Pour une nouvelle base, utilisez seulement `sql/schema.sql`.

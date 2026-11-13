@@ -4,7 +4,7 @@ import { generate, type Strategy } from '../../../lib/lottery';
 export const runtime = 'nodejs';
 export async function POST(req: NextRequest) {
   const body = await req.json().catch(()=>({}));
-  const strategy: Strategy = ['equilibree','frequence','aleatoire'].includes(body.strategy) ? body.strategy : 'equilibree';
+  const strategy: Strategy = ['equilibree','frequence','affinites','aleatoire'].includes(body.strategy) ? body.strategy : 'equilibree';
   const result = generate(strategy);
   let saved = false;
   if (process.env.DATABASE_URL) {
